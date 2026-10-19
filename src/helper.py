@@ -1,6 +1,6 @@
 import os 
 from dotenv import load_dotenv, find_dotenv
-from langchain_ollama import ChatOllama, OllamaEmbeddings
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAI
 from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.document_loaders import PyPDFLoader
@@ -68,10 +68,10 @@ def llm_pipeline(file_path):
                                       refine_prompt= REFINE_PROMPT_QUESTIONS)
     ques = ques_gen_chain.run(document_ques_gen)
 
-    embeddings = OllamaEmbeddings(model="nomic-embed-text")
+    embeddings = OllamaEmbeddings(model="models/text-embedding-004")
 
     vector_store = FAISS.from_documents(document_answer_gen, embeddings)
-    llm_answer_gen = ChatGoogleGenerativeAI(model="gemini-3.8-flash", temperature=0.3)
+    llm_answer_gen = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.3)
 
     ques_list = [
     line.strip()
