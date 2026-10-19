@@ -2,6 +2,7 @@ langchain
 langchain-community
 langchain-core
 langchain-ollama
+langchain-openai
 openai
 pypdf
 tiktoken 
