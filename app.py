@@ -11,24 +11,25 @@ from src.helper import llm_pipeline
 
 app = FastAPI()
 BASE_DIR = Path(__file__).resolve().parent
-STATIC_DIR = BASE_DIR / "static"
 TEMPLATES_DIR = BASE_DIR / "templates"
-STATIC_DIR.mkdir(exist_ok=True)
-app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+STATIC_DIR = BASE_DIR / "static"
+
+# Mount static folder only if it actually exists and has files
+if STATIC_DIR.is_dir():
+  app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
 
-# The retrieval chain stays in memory for the short-lived browser session so
-# answers can be requested one at a time after question generation.
 qa_sessions = {}
+
 
 @app.get("/")
 async def index(request: Request):
-    return templates.TemplateResponse(
-        request=request,
-        name="index.html",
-        context={},
-    )
+  return templates.TemplateResponse(
+      request=request,
+      name="index.html",
+      context={},
+  )
 
 
 @app.post("/generate")
