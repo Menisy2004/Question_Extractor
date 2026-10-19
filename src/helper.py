@@ -1,6 +1,6 @@
 import os 
 from dotenv import load_dotenv, find_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.document_loaders import PyPDFLoader
@@ -8,7 +8,6 @@ from langchain_text_splitters import TokenTextSplitter
 from langchain_core.documents import Document
 from langchain_classic.chains.summarize import load_summarize_chain
 from google import genai
-from langchain_ollama import OllamaEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_classic.chains import RetrievalQA
 from langchain_core.prompts import PromptTemplate
@@ -68,7 +67,7 @@ def llm_pipeline(file_path):
                                       refine_prompt= REFINE_PROMPT_QUESTIONS)
     ques = ques_gen_chain.run(document_ques_gen)
 
-    embeddings = OllamaEmbeddings(model="models/text-embedding-004")
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
 
     vector_store = FAISS.from_documents(document_answer_gen, embeddings)
     llm_answer_gen = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.3)
