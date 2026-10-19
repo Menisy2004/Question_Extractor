@@ -1,17 +1,14 @@
-langchain
-langchain-community
-langchain-core
-langchain-ollama
-langchain-openai
-openai
-pypdf
-tiktoken 
-aiofiles
 fastapi
 uvicorn
 jinja2
 python-multipart
-PyPDF2
-faiss-cpu
+aiofiles
+pypdf
 python-dotenv
--e .
+langchain
+langchain-core
+langchain-community
+langchain-classic
+langchain-openai
+langchain-google-genai
+tiktoken

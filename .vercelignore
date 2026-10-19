@@ -1,0 +1,11 @@
+research/
+*.ipynb
+.ipynb_checkpoints/
+.git
+.gitignore
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+answer.txt
