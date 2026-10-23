@@ -16,6 +16,10 @@ from src.prompt import *
 
 load_dotenv(find_dotenv())
 
+# Accept either common Google AI Studio key name in local and hosted environments.
+if not os.getenv("GOOGLE_API_KEY") and os.getenv("GEMINI_API_KEY"):
+    os.environ["GOOGLE_API_KEY"] = os.environ["GEMINI_API_KEY"]
+
 def file_processing(file_path):
     # Load data from PDF
     loader = PyPDFLoader(file_path)
@@ -68,7 +72,7 @@ def llm_pipeline(file_path):
                                       refine_prompt= REFINE_PROMPT_QUESTIONS)
     ques = ques_gen_chain.run(document_ques_gen)
 
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 
     vector_store = FAISS.from_documents(document_answer_gen, embeddings)
     llm_answer_gen = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.3)

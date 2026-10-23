@@ -11,6 +11,8 @@
   const resultsSection = document.querySelector("#results-section");
   const questionList = document.querySelector("#question-list");
   const copyButton = document.querySelector("#copy-button");
+  const maxUploadBytes = Number(document.body.dataset.maxUploadBytes) || 30 * 1024 * 1024;
+  const maxUploadMb = Math.round(maxUploadBytes / (1024 * 1024));
   let sessionId = null;
   let questions = [];
 
@@ -21,8 +23,8 @@
       input.value = "";
       return;
     }
-    if (file.size > 30 * 1024 * 1024) {
-      showError("This PDF is larger than 30 MB. Please choose a smaller document.");
+    if (file.size > maxUploadBytes) {
+      showError(`This PDF is larger than ${maxUploadMb} MB. Please choose a smaller document.`);
       input.value = "";
       return;
     }
@@ -73,9 +75,18 @@
     generateButton.disabled = true;
     buttonLabel.textContent = "Generating…";
     resultsSection.hidden = true;
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 70_000);
     try {
-      const response = await fetch("/generate", { method: "POST", body: new FormData(form) });
-      const data = await response.json();
+      const response = await fetch("/generate", {
+        method: "POST",
+        body: new FormData(form),
+        signal: controller.signal,
+      });
+      const contentType = response.headers.get("content-type") || "";
+      const data = contentType.includes("application/json")
+        ? await response.json()
+        : { detail: `The server returned an unexpected response (HTTP ${response.status}). Check the Vercel function logs.` };
       if (!response.ok) throw new Error(data.detail || "Something went wrong while creating your questions.");
       sessionId = data.session_id;
       questions = data.questions;
@@ -84,8 +95,11 @@
       resultsSection.hidden = false;
       resultsSection.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch (error) {
-      showError(error.message || "Could not reach the question generator. Please try again.");
+      showError(error.name === "AbortError"
+        ? "Question generation took too long and the request timed out. Try a shorter PDF, then check the Vercel function logs if this continues."
+        : (error.message || "Could not reach the question generator. Please try again."));
     } finally {
+      window.clearTimeout(timeoutId);
       loadingState.hidden = true;
       generateButton.disabled = !input.files[0];
       buttonLabel.textContent = "Generate questions";
