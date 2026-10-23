@@ -1,9 +1,0 @@
-README.md
-setup.py
-Question_Generation_Project.egg-info/PKG-INFO
-Question_Generation_Project.egg-info/SOURCES.txt
-Question_Generation_Project.egg-info/dependency_links.txt
-Question_Generation_Project.egg-info/top_level.txt
-src/__init__.py
-src/helper.py
-src/prompt.py

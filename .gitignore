@@ -1,6 +1,0 @@
-.env
-vidreq/
-venv/
-
-*.pyc
-__pycache__/
