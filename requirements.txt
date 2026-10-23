@@ -8,7 +8,6 @@ python-dotenv
 langchain
 langchain-core
 langchain-community
-faiss-cpu
 langchain-classic
 langchain-openai
 langchain-google-genai

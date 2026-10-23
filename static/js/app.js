@@ -76,7 +76,7 @@
     buttonLabel.textContent = "Generating…";
     resultsSection.hidden = true;
     const controller = new AbortController();
-    const timeoutId = window.setTimeout(() => controller.abort(), 70_000);
+    const timeoutId = window.setTimeout(() => controller.abort(), 190_000);
     try {
       const response = await fetch("/generate", {
         method: "POST",
