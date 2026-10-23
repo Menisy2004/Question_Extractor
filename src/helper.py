@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv, find_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import TokenTextSplitter
@@ -51,8 +52,8 @@ def llm_pipeline(file_path):
     # making an unnecessary Gemini refine call for every small answer chunk.
     document_answer_gen, document_ques_gen = file_processing(file_path)
 
-    llm_ques_gen_pipeline = ChatGoogleGenerativeAI(model="gemini-3.8-flash", temperature=0.3)
-
+    llm_ques_gen_pipeline = ChatGroq(model="openai/gpt-oss-120b", temperature=0.3)
+   
     PROMPT_QUESTIONS = PromptTemplate(template=prompt_template, input_variables=['text'])
 
     REFINE_PROMPT_QUESTIONS = PromptTemplate(

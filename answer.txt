@@ -78,3 +78,36 @@ Answer: The objective of Target 17.2 is for developed countries to fully impleme
 *   Achieving the target of 0.15 to 0.20 per cent of ODA/GNI to least developed countries.
 *   Encouraging ODA providers to consider setting a target to provide at least 0.20 per cent of ODA/GNI to least developed countries.
 ------------------------------------------
+Question: 1. According to Target 1.1, what specific daily income threshold is used to measure extreme poverty?
+Answer: According to Target 1.1, extreme poverty is currently measured as people living on less than $1.25 a day.
+------------------------------------------
+Question: 2. What are the specific quantitative targets for neonatal and under-5 mortality rates per 1,000 live births set out in Target 3.2?
+Answer: According to Target 3.2, the specific quantitative targets are:
+
+*   **Neonatal mortality:** At least as low as 12 per 1,000 live births.
+*   **Under-5 mortality:** At least as low as 25 per 1,000 live births.
+------------------------------------------
+Question: 3. Under Target 8.1, what is the minimum annual gross domestic product growth rate targeted for least developed countries?
+Answer: The provided text does not contain information regarding Target 8.1 or a specific minimum annual gross domestic product growth rate for least developed countries.
+------------------------------------------
+Question: 4. By what target year does Target 8.7 aim to completely end child labour in all its forms?
+Answer: Target 8.7 aims to end child labour in all its forms by 2025.
+------------------------------------------
+Question: 5. What target percentage cap does Target 10.c set for the transaction costs of migrant remittances by 2030?
+Answer: Target 10.c sets a target to reduce the transaction costs of migrant remittances to less than 3 per cent by 2030.
+------------------------------------------
+Question: 6. According to Target 12.3, by how much must per capita global food waste be reduced at the retail and consumer levels by 2030?
+Answer: According to Target 12.3, per capita global food waste at the retail and consumer levels must be halved by 2030.
+------------------------------------------
+Question: 7. What annual funding amount did developed-country parties commit to mobilize jointly by 2020 under Target 13.a?
+Answer: I do not know the answer to this question. The provided document does not contain information regarding Target 13.a or any funding commitments associated with it.
+------------------------------------------
+Question: 8. Under Target 14.5, what minimum percentage of coastal and marine areas was targeted for conservation by 2020?
+Answer: Under Target 14.5, the target was to conserve at least 10 per cent of coastal and marine areas by 2020.
+------------------------------------------
+Question: 9. What target percentage of gross national income (GNI) for official development assistance to developing countries is specified in Target 17.2?
+Answer: Target 17.2 specifies a target of 0.7 per cent of gross national income (GNI) for official development assistance (ODA) to developing countries.
+------------------------------------------
+Question: 10. By what year did Target 17.8 aim to fully operationalize the technology bank and science, technology, and innovation capacity-building mechanism for least developed countries?
+Answer: Target 17.8 aimed to fully operationalize the technology bank and science, technology, and innovation capacity-building mechanism for least developed countries by 2017.
+------------------------------------------

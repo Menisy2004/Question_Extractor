@@ -11,4 +11,5 @@ langchain-community
 langchain-classic
 langchain-openai
 langchain-google-genai
+langchain-groq
 tiktoken
