@@ -93,9 +93,14 @@ async def generate_questions(file: UploadFile = File(...)):
                 status_code=403,
                 detail="Google has denied API access for this project. Check that the Google API key is valid and the Gemini API is enabled for its project.",
             ) from exc
+        if any(marker in error_text.upper() for marker in ("TIMEOUT", "TIMED OUT", "DEADLINE EXCEEDED")):
+            raise HTTPException(
+                status_code=504,
+                detail="Gemini did not respond in time. Please retry shortly or try a shorter PDF.",
+            ) from exc
         raise HTTPException(
             status_code=500,
-            detail="Question generation failed. Check that GROQ_API_KEY and GOOGLE_API_KEY (or GEMINI_API_KEY) are configured in the deployment environment, then try again.",
+            detail="Question generation failed. Check that GOOGLE_API_KEY or GEMINI_API_KEY is configured in the deployment environment, then try again.",
         ) from exc
     finally:
         await file.close()

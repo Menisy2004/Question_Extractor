@@ -111,3 +111,28 @@ Answer: Target 17.2 specifies a target of 0.7 per cent of gross national income 
 Question: 10. By what year did Target 17.8 aim to fully operationalize the technology bank and science, technology, and innovation capacity-building mechanism for least developed countries?
 Answer: Target 17.8 aimed to fully operationalize the technology bank and science, technology, and innovation capacity-building mechanism for least developed countries by 2017.
 ------------------------------------------
+Question: 1. How is extreme poverty specifically defined and measured under Target 1.1?
+Answer: Under Target 1.1, extreme poverty is specifically measured as **people living on less than $1.25 a day**.
+------------------------------------------
+Question: 2. What target year is established in Target 2.5 for maintaining the genetic diversity of seeds, cultivated plants, and domesticated animals?
+Answer: Based on the provided context, Target 2.5 is not mentioned, so I do not know the answer.
+------------------------------------------
+Question: 3. What are the specific target thresholds for maternal, neonatal, and under-5 mortality rates outlined in Targets 3.1 and 3.2?
+Answer: Based on Targets 3.1 and 3.2 in the provided text, the specific target thresholds are:
+
+* **Maternal mortality ratio (Target 3.1):** Reduce the global maternal mortality ratio to **less than 70 per 100,000 live births**.
+* **Neonatal mortality (Target 3.2):** Reduce neonatal mortality to **at least as low as 12 per 1,000 live births**.
+* **Under-5 mortality (Target 3.2):** Reduce under-5 mortality to **at least as low as 25 per 1,000 live births**.
+------------------------------------------
+Question: 4. What specific annual gross domestic product (GDP) growth rate is targeted for least developed countries under Target 8.1?
+Answer: Under Target 8.1, the targeted annual gross domestic product (GDP) growth rate for least developed countries is **at least 7 per cent** per annum.
+------------------------------------------
+Question: 5. Under Target 10.c, to what percentage should the transaction costs of migrant remittances be reduced by 2030?
+Answer: Under Target 10.c, the transaction costs of migrant remittances should be reduced to **less than 3 per cent** by 2030 (and remittance corridors with costs higher than 5 per cent should be eliminated).
+------------------------------------------
+Question: 6. By how much does Target 12.3 aim to reduce per capita global food waste at the retail and consumer levels by 2030?
+Answer: According to Target 12.3, the goal is to **halve** (reduce by 50%) per capita global food waste at the retail and consumer levels by 2030.
+------------------------------------------
+Question: 7. What annual financial dollar amount are developed-country parties committed to mobilizing by 2020 to address climate change needs under Target 13.a?
+Answer: Under Target 13.a, developed-country parties are committed to a goal of mobilizing jointly **$100 billion** annually by 2020.
+------------------------------------------
