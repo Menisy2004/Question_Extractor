@@ -93,7 +93,12 @@ async def generate_questions(file: UploadFile = File(...)):
                 status_code=403,
                 detail="Google has denied API access for this project. Check that the Google API key is valid and the Gemini API is enabled for its project.",
             ) from exc
-        if any(marker in error_text.upper() for marker in ("TIMEOUT", "TIMED OUT", "DEADLINE EXCEEDED")):
+        if any(
+            marker in error_text.upper()
+            for marker in (
+                "504", "TIMEOUT", "TIMED OUT", "DEADLINE EXCEEDED", "DEADLINE_EXCEEDED"
+            )
+        ):
             raise HTTPException(
                 status_code=504,
                 detail="Gemini did not respond in time. Please retry shortly or try a shorter PDF.",

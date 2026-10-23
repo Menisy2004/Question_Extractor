@@ -33,8 +33,8 @@ def _is_temporary_model_error(error):
     return any(
         marker in message
         for marker in (
-            "503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED",
-            "TIMEOUT", "TIMED OUT", "DEADLINE EXCEEDED",
+            "503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "504",
+            "TIMEOUT", "TIMED OUT", "DEADLINE EXCEEDED", "DEADLINE_EXCEEDED",
         )
     )
 
